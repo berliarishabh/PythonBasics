@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://www.colorado.edu/sites/all/themes/custom/homepage2016/favicon.ico">
+
+    <title>Flask Web-App TLEN 5830</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="../static/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/theme.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">HW 7: Flask Web App</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/readfile">Read File</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Database options <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/planetsDB">Query the planets database</a></li>
+                <li><a href="/planetsDB/name">Find information by Planet Name</a></li>
+
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <style>
+        img.img-thumbnail {
+          display: block;
+          margin-left: auto;
+          margin-right: auto }
+        h1.centertext{
+          text-align: center
+        }
+        </style>
+        <img src="../static/CU_logo.jpg" width="200" class="img-thumbnail" </img>
+
+        <h1 class="centertext">TLEN 5830 HW7</h1>
+        <p>This is a web application based on Flask. Navigate through the website through the Navbar or Options below.</p>
+        <p>You can <ul>
+          <li>Read a file : <br><a href="/readfile"><button type="button" class="btn btn-sm btn-primary"><b>file1.txt</b></button></a> </li>
+          <li>Query an entire Database : <br><a href="/planetsDB"><button type="button" class="btn btn-sm btn-primary"><b>planetsDB.sq3</b></button></a></li>
+          <li>Query a Database with User Provided Input : <br><a href="/planetsDB/name"> <button type="button" class="btn btn-sm btn-primary"><b>planetsDB.sq3 planetname</b></button></a></li>
+        </ul>
+        </p>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../static/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

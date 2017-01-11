@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="Flask-Web App for TLEN 5830">
+  <meta name="author" content="Rishabh Berlia">
+  <link rel="icon" href="http://www.colorado.edu/sites/all/themes/custom/homepage2016/favicon.ico">
+
+  <title>Flask Web-App TLEN 5830</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap theme -->
+  <link href="../static/css/bootstrap-theme.min.css" rel="stylesheet">
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="../static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../static/theme.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">HW 7: Flask Web App</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/readfile">Read File</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Database options <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/planetsDB">Query the planets database</a></li>
+              <li><a href="/planetsDB/name">Find information by Planet Name</a></li>
+
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container theme-showcase" role="main">
+  <div class="jumbotron">
+
+  {% if bodyText%}
+    {{bodyText}}
+  {% endif %}
+
+  {%if lineList%}
+  <div class = "file">
+  <p><b>The contents of file1.txt : </b></p>
+  {% for line in lineList %}
+    {{line}} <br>
+  {% endfor %}
+  </div>
+  {% endif %}
+
+  {%if dbList %}
+  <div class = "db">
+  <table class="table table-striped">
+    <caption> Planets Database </caption>
+    <tr>
+    <th>No.</th>
+    <th>Name</th>
+    <th>Mass</th>
+    <th>Diameter</th>
+    <th>No. of Moons</th>
+    <th>Distance from Sun</th>
+  </tr>
+  {% for row in dbList %}
+  <tr>
+    <td>{{row[0]}} </td>
+    <td>{{row[1]}} </td>
+    <td>{{row[2]}} </td>
+    <td>{{row[3]}}</td>
+    <td>{{row[4]}}</td>
+    <td>{{row[5]}}</td>
+  </tr>
+  {% endfor %}
+</table>
+  </div>
+  {% endif %}
+
+
+  {%if form %}
+  <form method="post" action="/planetsDB/name">
+    <h2>Enter the Name of Planet:<br></h2>
+    <p>(Out of the 9 possible ones!)</p>
+    <input type=text name=myVar placeholder="Planet Name"></input>
+    <input type=submit class="btn btn-sm btn-primary" name=submit value=submit>
+  </form>
+  {% endif %}
+
+  {%if planetName %}
+  <table class="table table-striped">
+    <caption> Planets Database </caption>
+    <tr>
+    <th>No.</th>
+    <th>Name</th>
+    <th>Mass</th>
+    <th>Diameter</th>
+    <th>No. of Moons</th>
+    <th>Distance from Sun</th>
+  </tr>
+  {% for row in planetName %}
+  <tr>
+    <td>{{row[0]}} </td>
+    <td>{{row[1]}} </td>
+    <td>{{row[2]}} </td>
+    <td>{{row[3]}}</td>
+    <td>{{row[4]}}</td>
+    <td>{{row[5]}}</td>
+  </tr>
+  {% endfor %}
+  </table>
+
+  {% endif %}
+
+</div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../static/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/docs.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../static/js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>

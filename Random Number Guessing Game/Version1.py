@@ -1,5 +1,5 @@
 #author : Rishabh Berlia rishabh.berlia@colorado.edu
-#name : file1.py
+#name : Version.py
 #purpose : Random number guessing game - simple
 #date : 2016.08.29
 #version: 1.1.0 

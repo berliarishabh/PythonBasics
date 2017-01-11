@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #author : Rishabh Berlia rishabh.berlia@colorado.edu
-#name : file3.py
+#name : PieChart.py
 #date : 2016.10.31
 #purpose : Pie Chart plot of data read from a csv file. Car Theft data for Rate > 2.5%
 #version: 1.0.0
